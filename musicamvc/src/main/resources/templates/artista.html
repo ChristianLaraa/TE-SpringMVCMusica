@@ -2,21 +2,18 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="index :: head">
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Catalogo | Artistas</title>
 </head>
 <body class="d-flex flex-column min-vh-100">
 <nav th:replace="index :: navbar"></nav>
-    <h1>Artista</h1>
-<h1 th:text="${artista.nombre}"></h1>
-<p th:text="${artista.genero}"></p>
-    <img th:src="${artista.imagen}">
+    <h1>Artistas</h1>
 
 <div class="card" style="width: 18rem;">
     <img th:src="${artista.imagen}" class="card-img-top" alt="...">
     <div class="card-body">
         <h5 class="card-title" th:text="${artista.nombre}">Card title</h5>
         <p class="card-text" th:text="${artista.genero}">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <a href="#" class="btn btn-primary">Más información</a>
     </div>
 </div>
 
@@ -24,5 +21,28 @@
 <div th:replace="index :: jsincludes">
 
 </div>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #ffffff;
+        color: #000000;
+        margin: 0;
+        padding: 20px;
+    }
+    h1 {
+        color: #000000;
+        text-align: center;
+        margin-top: 3rem;
+    }
+    footer {
+        background-color: #f8f9fa;
+        padding: 20px;
+        text-align: center;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+    }
+</style>
 </body>
 </html>

@@ -11,7 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MusicaController {
 
     @GetMapping("/home/")
-    public String home(){
+    public String home() {
+        return "home";
+    }
+    @GetMapping
+    public String mostrarHomeDesdeTienda() {
         return "home";
     }
 
