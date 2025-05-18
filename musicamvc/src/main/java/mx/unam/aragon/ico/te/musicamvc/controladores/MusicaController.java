@@ -1,10 +1,10 @@
 package mx.unam.aragon.ico.te.musicamvc.controladores;
 
 import mx.unam.aragon.ico.te.musicamvc.modelos.Artista;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/tienda/")
@@ -32,4 +32,20 @@ public class MusicaController {
         model.addAttribute("artista", artista);
         return "artista";
     }
+
+    @GetMapping("/nuevo")
+    public String nuevo(Model model) {
+        model.addAttribute("artista", new Artista(1, "Maria", "Rock", 23, "cc", "http:algo"));
+        return"formArtista";
+    }
+
+    @PostMapping("/guardar")
+    public String guardar(
+            @ModelAttribute Artista artista
+    ) {
+        LoggerFactory.getLogger(getClass()).info("Guardado artista + " + artista);
+        //mandarlo a la bd con un save
+        return "redirect:/tienda/nuevo?exito";
+    }
+
 }

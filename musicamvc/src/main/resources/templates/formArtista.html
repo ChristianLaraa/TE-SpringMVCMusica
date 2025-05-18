@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p class="text-sucess" th:if="${param.exito}"> Artista dado de alta con exito</p>
+<hr>
+<form th:action="@{/tienda/guardar}" th:object="${artista}" method="post">
+  <label>Nombre: </label> <input type ="text"
+                                  name="nombre" id="nombre" th:field="*{nombre}">
+    <label>Genero músical: </label> <input type ="text"
+                                    name="genero" id="genero" th:field="*{genero}">
+    <label>Edad: </label> <input type ="text"
+                                    name="edad" id="edad" th:field="*{edad}">
+    <label>Descripción: </label> <input type ="text"
+                                    name="descripcion" id="descripcion" th:field="*{descripcion}">
+    <label>Imagen (url): </label> <input type ="text"
+                                    name="imagen" id="imagen" th:field="*{imagen}">
+
+
+
+
+    <button type="submit">Enviar</button>
+</form>
+
+</body>
+</html>

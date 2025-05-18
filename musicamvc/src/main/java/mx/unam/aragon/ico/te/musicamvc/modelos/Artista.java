@@ -10,7 +10,7 @@ public class Artista {
     private String descripcion;
     private String imagen;
 
-    public Artista(String algo, int i, String rock, int edad, String url, String freddieMercury) {
+    public Artista() {
     }
 
     public Artista(int id, String nombre, String genero, Integer edad, String descripcion, String imagen) {
